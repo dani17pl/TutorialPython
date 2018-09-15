@@ -3,6 +3,8 @@ Created on 14 sept. 2018
 
 @author: Dani_
 '''
+def f(a,b,c=0): 
+    return a+b*c
 #la variable __name__ toma como valor el nombre del módulo 
 #importado, de forma que no se ejecuta nada en este caso.
 if __name__ == '__main__':
@@ -63,4 +65,48 @@ continuamos hasta aquí''')
     x = ""  
     y = x or "valor por defecto" 
     print(y)
-    print(7)
+    
+#Estructuras de control
+
+    #Sentencia if
+    print('{}, {}, {}'.format(a,b,c))
+    if (a>b):
+        print ('es',a)
+    elif(a+1==b):
+        print(f'es {a} y {b}')
+    else:
+        print('es',b, sep=':') 
+    
+    #Sentencia While
+    i=0
+        #While
+    while (i<=3):
+        print (i)
+        i+=1
+        
+        #do while
+    i=0
+    while True:
+        print (i)
+        i+=1
+        if not (i<=3):
+            break
+    
+    #Sentencia For
+    for x in [5,'7',11,'1bc',2]: 
+        print(x,'es un número primo')
+    
+    a = 0
+    for c in 'casa': 
+        print(a,c)
+        a += 1
+    #range(start,stop,step)
+    for c in range(0,-10,-2):
+        print('c=',c)
+
+#funciones (Mirar linea 6 declracion de funciones)
+    print(f(1,2)) # El resultado es 3 
+    print(f(1,2,3)) # El resultado es 6
+    #
+    print(f(c=2,a=1,b=3)) # El resultado es 5
+            
