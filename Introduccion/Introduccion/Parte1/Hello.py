@@ -63,4 +63,4 @@ continuamos hasta aquí''')
     x = ""  
     y = x or "valor por defecto" 
     print(y)
-    print(x)
+    print(2)
