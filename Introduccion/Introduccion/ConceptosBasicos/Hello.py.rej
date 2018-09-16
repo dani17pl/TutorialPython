@@ -1,0 +1,7 @@
+diff a/Introduccion/Introduccion/Parte1/Hello.py b/Introduccion/Introduccion/Parte1/Hello.py	(rejected hunks)
+@@ -64,2 +64,3 @@
+     y = x or "valor por defecto" 
+     print(y)
+\ No newline at end of file
++    print(7)
+\ No newline at end of file

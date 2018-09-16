@@ -5,6 +5,32 @@ Created on 14 sept. 2018
 '''
 def f(a,b,c=0): 
     return a+b*c
+def imprimirNumerosPrimos(numeroMaximo=1000):
+    print('numeros primos:')
+    #Sabemos que los pares no son primos
+    for  c in range(1,numeroMaximo+1,2):
+        ismodulo=False
+        y=c//2
+        for b in range(2,y+1,1):
+            if(c%b==0):
+                ismodulo=True      
+        if(ismodulo==False):
+            print(c)
+def operación(x,y,z):
+    assert y!=0,'Parámetro y es 0'
+    return x/y + z
+
+def conversionPorEntrada():
+    a=input('introduce por teclado:')
+    if(complex(a)):
+        print('es un complejo')
+    if (float(a)):
+        print('es un real') 
+    if int(a):
+        print('es un entero') 
+    if(str(a)):
+        print('es una cadena')
+ 
 #la variable __name__ toma como valor el nombre del módulo 
 #importado, de forma que no se ejecuta nada en este caso.
 if __name__ == '__main__':
@@ -104,9 +130,36 @@ continuamos hasta aquí''')
     for c in range(0,-10,-2):
         print('c=',c)
 
-#funciones (Mirar linea 6 declracion de funciones)
-    print(f(1,2)) # El resultado es 3 
-    print(f(1,2,3)) # El resultado es 6
-    #
-    print(f(c=2,a=1,b=3)) # El resultado es 5
+#Ejercicio numeros primos
+    #Definicion funcion linnea 8
+    imprimirNumerosPrimos(19)
             
+#funciones (Mirar linea 6 declracion de funcion)
+    print(f(1,2)) # El resultado es 1 
+    print(f(1,2,3)) # El resultado es 7
+    #los argumentos de una función no tienen porque ser indicados en la llamada en el orden de su definición.
+    print(f(c=3,a=1,b=2)) # El resultado es 7
+    
+#Exepciones
+    #Funcion declarada linea 19
+    #Produce fallo divisio por cero, encerar en bloque try except(catch)
+    try:
+        res = operación(5,2,3)
+        print('Resultado =',res) 
+    except ZeroDivisionError:
+         print('Problemas con una división por cero') 
+    print('Finalizando')
+    
+    #try:
+        #res = operación(5,0,3) 
+        #print('Resultado =',res)
+    #except AssertionError as error:
+    #    print('No se cumple una aserción:', error)
+    #print('Finalizando')
+#Ejercicio
+    #Declaracion funcion linea 23
+    try:
+        conversionPorEntrada()
+    except ValueError:
+        print('Es una cadena')
+    
