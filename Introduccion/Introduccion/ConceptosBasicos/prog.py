@@ -3,6 +3,7 @@ Created on 14 sept. 2018
 
 @author: Dani_
 '''
+import math
 def f(a,b,c=0): 
     return a+b*c
 def imprimirNumerosPrimos(numeroMaximo=1000):
@@ -10,7 +11,7 @@ def imprimirNumerosPrimos(numeroMaximo=1000):
     #Sabemos que los pares no son primos
     for  c in range(1,numeroMaximo+1,2):
         ismodulo=False
-        y=c//2
+        y=int(math.sqrt(c))
         for b in range(2,y+1,1):
             if(c%b==0):
                 ismodulo=True      
@@ -82,9 +83,16 @@ continuamos hasta aquí''')
         #x and y Conjunción 
         #not x Negación
     
+    #Podemos considerar que es falsy (falso sin ser False):
+        #▶ Valor numérico cero: 0, 0.0, 0+0j ▶ Cadena vacía con una, dos o tres comillas ▶ None
+    #operadores and y or con operandos que no son booleanos, el resultado no es True o False, sino:
+#x                   x or y      x and y y 
+#si x es truthy        x            y
+#si x es falsy         y            x
+
     a = 0 
     b = 1 
-    c = 2
+    c = 4
     print(b and c) # 2 
     print(a and c) # 0
     
@@ -96,7 +104,7 @@ continuamos hasta aquí''')
 
     #Sentencia if
     print('{}, {}, {}'.format(a,b,c))
-    if (a>b):
+    if a>b:
         print ('es',a)
     elif(a+1==b):
         print(f'es {a} y {b}')
@@ -132,7 +140,7 @@ continuamos hasta aquí''')
 
 #Ejercicio numeros primos
     #Definicion funcion linnea 8
-    imprimirNumerosPrimos(19)
+    imprimirNumerosPrimos(50)
             
 #funciones (Mirar linea 6 declracion de funcion)
     print(f(1,2)) # El resultado es 1 
