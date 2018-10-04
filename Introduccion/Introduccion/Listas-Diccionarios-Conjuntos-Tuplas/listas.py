@@ -5,6 +5,28 @@ Created on 16 sept. 2018
 '''
 #pueden contener instancias de cualquier tipo de dato, incluidas otras listas, y 
 #son mutables, es decir, podemos modificar cualquier posición de una lista
+def palin2(cadena):
+    lista=list(cadena)
+    listaR=lista.copy()
+    listaR.reverse()
+    return(lista==listaR)
+
+def complementarADN(adn):
+    #Creamos lista 
+    listaAdn=list(adn)
+    #Recorremos lista
+    for i in range(0,len(listaAdn)):
+        if(listaAdn[i]=='T'):
+            listaAdn[i]='A'
+        elif(listaAdn[i]=='A'):
+            listaAdn[i]='T'
+        elif(listaAdn[i]=='G'):
+            listaAdn[i]='C'
+        else:
+            listaAdn[i]='G'
+    #Pasar a cadena pura no con corchetes
+    return("".join(listaAdn))
+
 if __name__ == '__main__':
 #Operaciones basicas
     lista_vacía = []
@@ -89,3 +111,13 @@ if __name__ == '__main__':
     #l.sort(reverse=True) # ordena en orden descendente
     c.sort(reverse=True)
     print(c)
+    
+    #Ejercicio1 palindromo
+    cadena=input("Introduce cadena: ")
+    print("Es palindromo:")
+    print(palin2(cadena))
+    
+    #Ejercicio2
+    cadADN=input("Dame adn: ")
+    print(complementarADN(cadADN))
+    

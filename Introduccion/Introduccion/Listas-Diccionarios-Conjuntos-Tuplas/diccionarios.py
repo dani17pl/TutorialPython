@@ -54,4 +54,7 @@ if __name__ == '__main__':
     print(D) #nombre Sonia
     D.clear()#elimina todas las entradas
     
+    #Ejercicio 3(1 diccionarios)
+    
+    
     
