@@ -13,8 +13,8 @@ class Rectangulo(object):
     #El método inicializador siempre se llama igual en Python: __init(self,...)
     #self hace referencia a l instancia de la clase
     def __init__(self,alto,ancho): 
-       self.alto = alto
-       self.ancho = ancho
+        self.alto = alto
+        self.ancho = ancho
     #Definir metodos 
     def área(self): 
         return self.alto*self.ancho
